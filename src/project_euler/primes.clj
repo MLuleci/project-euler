@@ -1,4 +1,8 @@
-(ns project-euler.primes)
+(ns project-euler.primes
+  (:require [clojure.math :as math]))
+
+(defn limit [n]
+  (math/ceil (math/sqrt n)))
 
 (defn prime? [n]
   (cond (< n 2) false
