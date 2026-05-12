@@ -1,6 +1,5 @@
 (ns project-euler.solutions.26
-  (:require [project-euler.primes :as p])
-  (:require [clojure.math :as math]))
+  (:require [project-euler.primes :as p]))
 
 (defn order [a n]
   (reduce (fn [acc i] (let [r (mod acc n)] (if (= 1 r) (reduced i) (* r a))))
