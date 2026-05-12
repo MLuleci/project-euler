@@ -1,3 +1,5 @@
+(ns project-euler.solutions.25)
+
 (defn add 
   ([a b] (reverse (add (reverse a) (reverse b) 0)))
   ([lhs rhs carry] 
@@ -14,4 +16,4 @@
   ([] (fib '(1) '(1)))
   ([a b] (lazy-seq (cons a (fib b (add a b))))))
 
-(println (time (first (keep-indexed #(when (= (count %2) 1000) (inc %1)) (fib)))))
+(defn -main [] (first (keep-indexed #(when (= (count %2) 1000) (inc %1)) (fib))))

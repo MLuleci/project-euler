@@ -1,4 +1,5 @@
-(require '[clojure.string :as str])
+(ns project-euler.solutions.13
+  (:require [clojure.string :as str]))
 
 (def INPUT "37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
@@ -118,4 +119,4 @@
         (cons (mod i 10)
               (sum (quot i 10) (rest digits)))))))
 
-(println (time (apply str (take 10 (sum NUMBERS)))))
+(defn -main [] (apply str (take 10 (sum NUMBERS))))

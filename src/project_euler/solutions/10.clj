@@ -1,4 +1,5 @@
-(require '[clojure.math :as math])
+(ns project-euler.solutions.10
+  (:require [clojure.math :as math]))
 
 (defn k-primes [n]
   (filter #(<= (* % %) n)
@@ -18,4 +19,4 @@
 ; 2e6 -> 142,913,828,922
 ; takes about 10 minutes to compute :)
 ; see solution #12 for a faster prime tester
-(println (apply + (filter is-prime? (range 2e6))))
+(defn -main [] (apply + (filter is-prime? (range 2e6))))

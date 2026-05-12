@@ -12,6 +12,7 @@
 ;      26xxxxxxxx -> total 1,008,000
 ;
 ; then recurse again starting with the prefix '25', and so on.
+(ns project-euler.solutions.24)
 
 (defn factorial [n] (reduce * (range 1 (inc n))))
 
@@ -27,4 +28,4 @@
             (search (without coll digit)
                     (- limit (* index group)))))))
 
-(println (time (search (vec (range 10)) 1e6)))
+(defn -main [] (search (vec (range 10)) 1e6))

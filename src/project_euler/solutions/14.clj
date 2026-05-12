@@ -1,3 +1,5 @@
+(ns project-euler.solutions.14)
+
 (defn collatz [n] 
   (cond (= n 1) 1 
         (= (mod n 2) 0) (/ n 2)
@@ -8,4 +10,4 @@
             (if (= n 1) 1 
                 (inc (length (collatz n)))))))
 
-(println (time (apply max-key length (range 1 1e6))))
+(defn -main [] (apply max-key length (range 1 1e6)))

@@ -1,4 +1,5 @@
-(require '[clojure.math :as math])
+(ns project-euler.solutions.16
+  (:require [clojure.math :as math]))
 
 (defn zip [& xs] 
   (when (some not-empty xs)
@@ -37,4 +38,4 @@
         (= (mod b 2) 0) (let [r (pow a (/ b 2))] (multiply r r))
         :else (multiply (pow a (- b 1)) a)))))
 
-(println (time (apply + (pow '(2) 1000))))
+(defn -main [] (apply + (pow '(2) 1000)))

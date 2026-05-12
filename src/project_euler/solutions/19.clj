@@ -1,3 +1,5 @@
+(ns project-euler.solutions.19)
+
 (def start (java.util.Calendar/getInstance))
 (.set start 1901 0 1)
 
@@ -17,4 +19,4 @@
           (take-while #(.before % end) 
                       (iterate (partial add-months 1) start))))
 
-(println (time (count (sundays start end))))
+(defn -main [] (count (sundays start end)))

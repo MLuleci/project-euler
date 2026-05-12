@@ -1,3 +1,5 @@
+(ns project-euler.solutions.6)
+
 (defn square [i] (* i i))
 
 (defn sum-of-squares [n]
@@ -9,4 +11,4 @@
 (defn solve [n]
   (- (square-of-sum n) (sum-of-squares n)))
 
-(println (solve 100))
+(defn -main [] (solve 100))

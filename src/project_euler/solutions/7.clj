@@ -1,4 +1,5 @@
-(require '[clojure.math :as math])
+(ns project-euler.solutions.7
+  (:require [clojure.math :as math]))
 
 (defn filter-multiples [i coll]
   (filter #(not (= (mod % i) 0)) coll))
@@ -28,4 +29,4 @@
           (concat ps (sieve-chunk ps (range index (+ index d 1))))
           (+ index d))))))
 
-(println (nth (sieve 1000000) 10000))
+(defn -main [] (nth (sieve 1000000) 10000))

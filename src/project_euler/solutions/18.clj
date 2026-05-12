@@ -1,4 +1,5 @@
-(require '[clojure.string :as str])
+(ns project-euler.solutions.18
+  (:require [clojure.string :as str]))
 
 (def INPUT "75
 95 64
@@ -30,4 +31,4 @@
                            row))
             (reverse pyramid))))
 
-(println (time (max-path pyramid)))
+(defn -main [] (max-path pyramid))

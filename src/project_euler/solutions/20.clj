@@ -1,3 +1,5 @@
+(ns project-euler.solutions.20)
+
 (defn zip [& nums]
   (when (some not-empty nums)
     (let [heads (map #(or (first %) 0) nums)
@@ -51,4 +53,4 @@
 (defn factorial [n]
   (apply multiply (map from-int (range 1 (inc n)))))
 
-(println (time (reduce + (factorial 100))))
+(defn -main [] (reduce + (factorial 100)))

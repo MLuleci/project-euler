@@ -1,5 +1,6 @@
-(import java.util.BitSet)
-(require '[clojure.math :as math])
+(ns project-euler.solutions.3
+  (:import java.util.BitSet)
+  (:require [clojure.math :as math]))
 
 ; Generate primes using the Sieve of Eratosthenes and a bit set
 (defn primes [n]
@@ -28,4 +29,4 @@
 
 (def LIMIT 600851475143)
 
-(println (factors LIMIT))
+(defn -main [] (factors LIMIT))

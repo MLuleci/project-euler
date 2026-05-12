@@ -1,3 +1,5 @@
+(ns project-euler.solutions.5)
+
 (defn is-divisible [n m]
   (->> (range m)
        (map inc)
@@ -10,4 +12,4 @@
        (drop-while #(not (is-divisible % n)))
        (first)))
 
-(println (find-divisible 20))
+(defn -main [] (find-divisible 20))

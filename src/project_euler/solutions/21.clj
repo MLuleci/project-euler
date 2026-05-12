@@ -1,4 +1,5 @@
-(require '[clojure.math :as math])
+(ns project-euler.solutions.21
+  (:require [clojure.math :as math]))
 
 (defn factors [n]
   (cons 1 
@@ -10,4 +11,4 @@
 (defn d [n] (reduce + (factors n)))
 (def m (zipmap (range 10000) (map d (range 10000))))
 
-(println (time (reduce-kv (fn [acc k v] (if (and (not= (m k) k) (= (m v) k)) (+ acc k) acc)) 0 m)))
+(defn -main [] (reduce-kv (fn [acc k v] (if (and (not= (m k) k) (= (m v) k)) (+ acc k) acc)) 0 m))

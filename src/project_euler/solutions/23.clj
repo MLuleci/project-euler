@@ -1,4 +1,5 @@
-(require '[clojure.math :as math])
+(ns project-euler.solutions.23
+  (:require [clojure.math :as math]))
 
 (def sum-of-factors
   (memoize (fn [n] 
@@ -16,4 +17,4 @@
 (def ABUNDANTS (filter abundant? (range 1 LIMIT)))
 (def PAIRS (into #{} (mapcat (fn [x] (filter #(< % LIMIT) (map #(+ x %) ABUNDANTS))) ABUNDANTS)))
 
-(println (time (reduce + (filter #(nil? (PAIRS %)) (range 1 LIMIT)))))
+(defn -main [] (reduce + (filter #(nil? (PAIRS %)) (range 1 LIMIT))))

@@ -1,4 +1,5 @@
-(require '[clojure.string :as str])
+(ns project-euler.solutions.11
+  (:require [clojure.string :as str]))
 
 (def INPUT "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
@@ -58,6 +59,7 @@
 (defn search-by-diagonals [g n]
   (search-by-rows (get-diagonals g) n))
 
-(println (max (search-by-diagonals GRID SIZE)
-              (search-by-rows GRID SIZE)
-              (search-by-columns GRID SIZE)))
+(defn -main []
+  (max (search-by-diagonals GRID SIZE)
+       (search-by-rows GRID SIZE)
+       (search-by-columns GRID SIZE)))

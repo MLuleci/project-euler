@@ -1,4 +1,5 @@
-(require '(clojure [string :as str] [math :as math]))
+(ns project-euler.solutions.17
+  (:require (clojure [string :as str] [math :as math])))
 
 (def ONES {
   0 ""
@@ -55,4 +56,4 @@
 (defn count-chars [s]
   (count (str/replace s #"\s+" "")))
 
-(println (time (reduce + (map #(count-chars (number->string %)) (range 1 1001)))))
+(defn -main [] (reduce + (map #(count-chars (number->string %)) (range 1 1001))))

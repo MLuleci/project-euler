@@ -1,11 +1,4 @@
-(require '(clojure [math :as math] [set :as set]))
-
-(defn triangles
-  ([] (triangles 1 0))
-  ([i n] (lazy-seq (cons (+ i n) (triangles (inc i) (+ i n))))))
-
-(defn limit [n]
-  (math/ceil (math/sqrt n)))
+(ns project-euler.primes)
 
 (defn prime? [n]
   (cond (< n 2) false
@@ -22,11 +15,3 @@
   ([n] (lazy-seq (if (prime? n) 
                      (cons n (primes (+ n 2)))
                      (primes (+ n 2))))))
-
-(defn factors [n]
-  (->> (range 1 (limit n))
-       (filter #(= (mod n %) 0))
-       (mapcat #(list % (/ n %)))
-       (distinct)))
-
-(println (time (some #(when (> (count (factors %)) 500) %) (triangles))))

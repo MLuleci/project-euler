@@ -1,4 +1,5 @@
-(require '[clojure.string :as str])
+(ns project-euler.solutions.8
+  (:require [clojure.string :as str]))
 
 (def INPUT "73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
@@ -21,9 +22,9 @@
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450")
 
-(->> (str/replace INPUT #"\s" "")
-  (map #(Integer/parseInt (str %)))
-  (partition 13 1)
-  (map #(apply * %))
-  (reduce max)
-  (print))
+(defn -main []
+  (->> (str/replace INPUT #"\s" "")
+    (map #(Integer/parseInt (str %)))
+    (partition 13 1)
+    (map #(apply * %))
+    (reduce max)))

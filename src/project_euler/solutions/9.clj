@@ -1,4 +1,5 @@
-(require '[clojure.math :as math])
+(ns project-euler.solutions.9
+  (:require [clojure.math :as math]))
 
 (defn int-hypot [x y]
   (let [z (int (math/hypot x y))]
@@ -20,8 +21,8 @@
   (when (and (< a b c) (= (+ a b c) 1000))
     (* a b c)))
 
-(->> (triples 1000)
-     (filter #(apply test-triple %))
-     (first)
-     (apply *)
-     (print))
+(defn -main []
+  (->> (triples 1000)
+      (filter #(apply test-triple %))
+      (first)
+      (apply *)))
