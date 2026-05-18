@@ -14,12 +14,12 @@
     (if (not coin)
         (last memo) ; 0 -> n
         (make-change n rest 
-          (vec (reduce (fn [acc i]
-                        (conj acc (if (> coin i)
-                                      (nth memo i) ; can't use the coin
-                                      (+ (nth memo i)             ; don't use the coin
-                                         (nth acc (- i coin)))))) ; use the coin
-                       [1]
-                       (range 1 (inc n))))))))
+          (reduce (fn [acc i]
+                      (conj acc (if (> coin i)
+                                    (nth memo i) ; can't use the coin
+                                    (+ (nth memo i)             ; don't use the coin
+                                       (nth acc (- i coin)))))) ; use the coin
+                  [1]
+                  (range 1 (inc n)))))))
 
 (defn -main [] (make-change 200))
