@@ -25,4 +25,3 @@
       (cons (render coll p)
             (when-let [n (next-order p)]
               (permute coll n))))))
-        
